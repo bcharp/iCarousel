@@ -104,6 +104,7 @@
 @property (nonatomic, assign) BOOL didDrag;
 @property (nonatomic, assign) NSTimeInterval toggleTime;
 @property (nonatomic, assign) NSInteger animationDisableCount;
+@property (nonatomic, assign) BOOL pagingEnabled;
 
 NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *self);
 
@@ -1738,7 +1739,19 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     CGFloat distance = [self decelerationDistance];
     _startOffset = _scrollOffset;
     _endOffset = _startOffset + distance;
-    if (_stopAtItemBoundary)
+
+    if (_pagingEnabled)
+    {
+        if (distance > 0.0f)
+        {
+            _endOffset = ceilf(_startOffset);
+        }
+        else
+        {
+            _endOffset = floorf(_startOffset);
+        }
+    }
+    else if (_stopAtItemBoundary)
     {
         if (distance > 0.0f)
         {
