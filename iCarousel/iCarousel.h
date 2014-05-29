@@ -138,7 +138,7 @@ iCarouselOption;
 @property (nonatomic, readonly, getter = isDragging) BOOL dragging;
 @property (nonatomic, readonly, getter = isDecelerating) BOOL decelerating;
 @property (nonatomic, readonly, getter = isScrolling) BOOL scrolling;
-@property (nonatomic, assign, getter = isPagingEnabled) BOOL pagingEnabled;
+@property (nonatomic, assign) BOOL pagingEnabled;
 
 - (void)scrollByOffset:(CGFloat)offset duration:(NSTimeInterval)duration;
 - (void)scrollToOffset:(CGFloat)offset duration:(NSTimeInterval)duration;

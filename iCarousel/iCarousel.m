@@ -104,7 +104,6 @@
 @property (nonatomic, assign) BOOL didDrag;
 @property (nonatomic, assign) NSTimeInterval toggleTime;
 @property (nonatomic, assign) NSInteger animationDisableCount;
-@property (nonatomic, assign) BOOL pagingEnabled;
 
 NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *self);
 
